@@ -2,12 +2,36 @@
 
 A prototype framework that lets **Product Managers write and run acceptance tests** without code.
 
+## Core Assumption
+
+**Both PMs and Engineers are working with AI pair programmers.**
+
+This changes everything:
+
+| Traditional | AI-Augmented |
+|-------------|--------------|
+| PM writes spec → Engineer reads it → Engineer codes | PM writes spec → Engineer's AI reads it → AI proposes code |
+| Human translation at every step | **The spec IS the prompt** |
+
+The YAML spec format is designed to be:
+1. **Human-readable** — PMs can write and understand it
+2. **Machine-readable** — AI coding assistants can parse and implement from it
+
+When an engineer picks up a failing spec, they can tell their AI:
+> "Make this spec pass: `specs/password-reset.spec.yaml`"
+
+The AI reads the YAML, understands what needs to exist, and generates the implementation. The spec becomes executable requirements that both humans and machines can act on.
+
 ## The Concept
 
 ```
 PM writes YAML spec → Runs it → ❌ Fails (feature doesn't exist)
                                     ↓
-                    Engineer builds feature
+                    Engineer's AI reads spec
+                                    ↓
+                    AI proposes implementation
+                                    ↓
+                    Engineer reviews/refines
                                     ↓
                     PM runs spec → ✅ Passes → Ship it
 ```
