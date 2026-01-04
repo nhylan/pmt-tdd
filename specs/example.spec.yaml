@@ -1,4 +1,5 @@
 feature: Example.com Test
+status: active
 description: Verify the example.com homepage works
 
 scenarios:

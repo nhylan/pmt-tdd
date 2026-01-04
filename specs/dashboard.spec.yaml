@@ -1,4 +1,5 @@
 feature: Dashboard Access
+status: draft
 description: Logged-in users can access their dashboard
 
 scenarios:
