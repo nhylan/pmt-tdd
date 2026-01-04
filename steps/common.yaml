@@ -1,0 +1,28 @@
+# Reusable step definitions
+# These can be referenced from any spec
+
+login_as:
+  description: Log into the application
+  parameters: [email]
+  steps:
+    - goto: /login
+    - fill: { selector: "#email", value: "{{email}}" }
+    - fill: { selector: "#password", value: "test123" }
+    - click: Sign In
+
+logout:
+  description: Log out of the application
+  steps:
+    - click: Profile
+    - click: Sign Out
+    - assert_visible: You have been logged out
+
+add_to_cart:
+  description: Add a product to cart
+  parameters: [product_name]
+  steps:
+    - fill: { selector: "#search", value: "{{product_name}}" }
+    - click: Search
+    - click: "{{product_name}}"
+    - click: Add to Cart
+    - assert_visible: Added to cart

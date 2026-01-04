@@ -1,0 +1,10 @@
+feature: Example.com Test
+description: Verify the example.com homepage works
+
+scenarios:
+  - name: Homepage loads correctly
+    steps:
+      - goto: https://example.com
+      - assert_visible: Example Domain
+
+

@@ -1,0 +1,18 @@
+feature: Dashboard Access
+description: Logged-in users can access their dashboard
+
+scenarios:
+  - name: User views dashboard after login
+    steps:
+      - use: login_as
+        with: { email: "user@test.com" }
+      - click: Dashboard
+      - assert_visible: Welcome back
+
+  - name: User logs out from dashboard
+    steps:
+      - use: login_as
+        with: { email: "user@test.com" }
+      - click: Dashboard
+      - use: logout
+      - assert_visible: You have been logged out
